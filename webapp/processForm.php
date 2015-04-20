@@ -1,4 +1,7 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 /**
  * JBoss, Home of Professional Open Source
  * Copyright Red Hat, Inc., and individual contributors.
@@ -24,19 +27,19 @@ require(PATH_TO_SRC . "SenderClient.php");
 require("toArray.php");
 
 //gather our variables from the POST data
-$type = $_POST['sendType'];
+$type               = $_POST['sendType'];
 
-$serverURL = $_POST['serverURL'];
-$pushApplicationID = $_POST['pushApplicationID'];
-$masterSecret = $_POST['masterSecret'];
+$serverURL          = $_POST['serverURL'];
+$pushApplicationID  = $_POST['pushApplicationID'];
+$masterSecret       = $_POST['masterSecret'];
 
-$messageKey = $_POST['messageKey'];
-$messageValue = $_POST['messageValue'];
-$variants = $_POST['variants'];
-$category = $_POST['category'];
-$alias = $_POST['alias'];
-$deviceTypes = $_POST['deviceTypes'];
-$simplePush = $_POST['simplePush'];
+$messageKey         = $_POST['messageKey'];
+$messageValue       = $_POST['messageValue'];
+$variants           = $_POST['variants'];
+$category           = $_POST['category'];
+$alias              = $_POST['alias'];
+$deviceTypes        = $_POST['deviceTypes'];
+$simplePush         = $_POST['simplePush'];
 
 //now initiate our SenderClient and give it the form data
 $send = new SenderClient($type);

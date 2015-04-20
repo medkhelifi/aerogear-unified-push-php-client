@@ -21,11 +21,11 @@ class SenderClient {
   private $serverURL;
   private $pushApplicationID;
   private $masterSecret;
-  private $variants = array();    //strings of targeted variants
-  private $categories = array();
-  private $alias = array();     //strings of aliases
-  private $devices = array();     //strings of device types
-  private $messages = array();    //array of key:val arrays
+  private $variants     = array();    //strings of targeted variants
+  private $categories   = array();
+  private $alias        = array();     //strings of aliases
+  private $devices      = array();     //strings of device types
+  private $messages     = array();    //array of key:val arrays
   private $simplePush;
   private $ttl;   //time to live in seconds
   private $responseCode;
@@ -59,7 +59,7 @@ class SenderClient {
     $con = curl_init($this->serverURL);
   
     curl_setopt($con, CURLOPT_HEADER, 0);
-    curl_setopt($con, CURLOPT_SSLVERSION, 3);           //Allows https or http
+    curl_setopt($con, CURLOPT_SSLVERSION, 4); //Allows https or http Updated by Mohamed KHELIFI <mohamedchrif.khelifi@gmail.com> cannot establish a handShake if we use version 3
     curl_setopt($con, CURLOPT_POST, 1);     //POST request
     curl_setopt($con, CURLOPT_RETURNTRANSFER, true);  //hides(t)/shows(f) response (as value of curl_exec)
     curl_setopt($con, CURLOPT_HTTPHEADER, array("Authorization: Basic " .  $credentials,
